@@ -14,6 +14,8 @@ import com.example.myapplication.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+    final String text = "Emilia was here: ";
+    int counter = 0;
 
     @Override
     public View onCreateView(
@@ -32,16 +34,15 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                counter++;
+                int value = callHola(counter);
+                binding.textviewFirst.setText(text+value);
             }
         });
 
-        String text = "Emilia was here: ";
-        int value = 42;
         // 1) Initialise C++-things
         // 2) value = result of call to C++ function
-        value = callHola(7);
+        int value = callHola(counter);
         binding.textviewFirst.setText(text+value);
     }
 

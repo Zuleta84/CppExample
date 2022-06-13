@@ -1,6 +1,6 @@
 plugins {
-    // id 'com.android.application'
-    id 'com.android.library'
+    id 'com.android.application'
+    //id 'com.android.library'
 }
 
 android {
@@ -8,7 +8,7 @@ android {
     ndkVersion '22.1.7171670'
 
     defaultConfig {
-        // applicationId "com.example.myapplication"
+        applicationId "com.example.myapplication"
         minSdk 21
         targetSdk 32
         versionCode 1
