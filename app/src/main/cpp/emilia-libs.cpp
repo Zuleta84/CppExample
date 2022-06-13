@@ -24,16 +24,17 @@
 #define LOGI(...) \
   ((void)__android_log_print(ANDROID_LOG_INFO, "emilia-libs::", __VA_ARGS__))
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_example_myapplication_MainActivity_callHola(JNIEnv *env, jobject thiz) {
+extern "C" JNIEXPORT int JNICALL
+Java_com_example_myapplication_FirstFragment_callHola(JNIEnv *env, jobject thiz, jint j) {
     // Just for simplicity, we do this right away; correct way would do it in
     // another thread...
     //auto ticks = GetTicks();
 
-    int resultat = hola(7);
+    int resultat = hola(j);
     //ticks = GetTicks() - ticks;
 
     //LOGI("calculation time: %" PRIu64, ticks);
 
-    return env->NewStringUTF("Hello from JNI LIBS!");
+    //return env->NewStringUTF("Hello from JNI LIBS!");
+    return resultat;
 }

@@ -6,7 +6,7 @@
 #define MY_APPLICATION_EMILIA_H
 
 #ifdef __cplusplus
-extern "C"
+extern "C++"
 #endif // __cplusplus
            int hola(int n);
 #endif //MY_APPLICATION_EMILIA_H
