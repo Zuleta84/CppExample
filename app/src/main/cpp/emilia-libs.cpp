@@ -31,6 +31,10 @@ Java_com_example_myapplication_FirstFragment_callHola(JNIEnv *env, jobject thiz,
     //auto ticks = GetTicks();
 
     int resultat = hola(j);
+
+    jclass clazz = env->FindClass("com/example/myapplication/FirstFragment");
+    jmethodID messageMe = env->GetMethodID(clazz, "messageMe", "(I)I");
+    resultat = env->CallIntMethod(thiz, messageMe, resultat);
     //ticks = GetTicks() - ticks;
 
     //LOGI("calculation time: %" PRIu64, ticks);

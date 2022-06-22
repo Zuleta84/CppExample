@@ -53,6 +53,9 @@ public class FirstFragment extends Fragment {
     }
 
     public native int  callHola(int j);
+
+    public int messageMe(int foo) { return foo+1; }
+
     static {
         System.loadLibrary("emilia-libs");
     }
